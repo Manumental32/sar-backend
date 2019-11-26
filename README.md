@@ -1,3 +1,21 @@
+Correr la app con en la carpeta raiz del proyecto:
+
+docker-compose up
+
+Front:
+
+http://localhost:9999/
+
+DB:
+Ver credenciales en el archivo .env
+
+
+TODO:
+Agregar un dump a la db, ver este ejemplo:
+https://gist.github.com/jcavat/2ed51c6371b9b488d6a940ba1049189b
+
+
+
 Containerize This: PHP/Apache/MySQL
 ===================================
 
