@@ -1,15 +1,15 @@
-<h1>Hello Cloudreach!</h1>
-<h4>Attempting MySQL connection from php...</h4>
+<h1>SAR is alive!</h1>
 <?php
-$host = 'mysql';
-$user = 'root';
-$pass = 'rootpassword';
-$conn = new mysqli($host, $user, $pass);
-
-if ($conn->connect_error) {
-    die("Connection failed: " . $conn->connect_error);
-} else {
-    echo "Connected to MySQL successfully!";
-}
+include('connectDb.php');
 
 ?>
+<a href="http://localhost:9999/grabaDatos.php?arduino_id=1&client_id=1&humidity=10&light=20&temperature=30">http://localhost:9999/grabaDatos.php?arduino_id=1&client_id=1&humidity=10&light=20&temperature=30</a>
+<br>
+<a href="http://localhost:9999/getAllowedSensorsValue.php?arduino_id=1">http://localhost:9999/getAllowedSensorsValue.php?arduino_id=1</a>
+<br>
+<a href="http://localhost:9999/getIrrigationsPlans.php">http://localhost:9999/getIrrigationsPlans.php</a>
+<br>
+<a href="http://localhost:9999/getUsers.php">http://localhost:9999/getUsers.php</a>
+<br>
+<a href="http://localhost:9999/readArduinoMeasurements.php?arduino_id=1">http://localhost:9999/readArduinoMeasurements.php?arduino_id=1</a>
+<br>
