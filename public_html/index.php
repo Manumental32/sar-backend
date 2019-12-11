@@ -13,3 +13,8 @@ include('connectDb.php');
 <br>
 <a href="http://localhost:9999/readArduinoMeasurements.php?arduino_id=1">http://localhost:9999/readArduinoMeasurements.php?arduino_id=1</a>
 <br>
+<a href="http://localhost:9999/changeIrrigationPlan.php?arduino_id=1&irrigation_plan_id=2&user_id=3">http://localhost:9999/changeIrrigationPlan.php?arduino_id=1&irrigation_plan_id=2&user_id=3</a>
+<br>
+<a href="http://localhost:9999/getCurrentIrrigationPlanSelected.php?arduino_id=1&user_id=1">http://localhost:9999/getCurrentIrrigationPlanSelected.php?arduino_id=1&user_id=1</a>
+<br>
+
