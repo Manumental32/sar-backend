@@ -55,3 +55,14 @@ create table arduinos_irrigation_plan
 	arduinos_irrigation_plan_update_at datetime default CURRENT_TIMESTAMP not null
 );
 
+INSERT INTO users (user_id, client_id, name, lastname, mail, password, enabled) VALUES (1, 1, 'Manuel', 'Aquino', 'manuel.aquino.utn@gmail.com', 'manuel', 1);
+INSERT INTO users (user_id, client_id, name, lastname, mail, password, enabled) VALUES (2, 1, 'Pedro', 'Araujo', 'araujopedrop@gmail.com', 'pedro', 1);
+INSERT INTO users (user_id, client_id, name, lastname, mail, password, enabled) VALUES (3, 1, 'Nair', 'Olivera', 'nair.olivera.utn@gmail.com', 'nair', 1);
+
+INSERT INTO irrigations_plan (irrigation_plan_id, name, humidity_min_allowed, light_max_allowed, temperature_max_allowed) VALUES (1, 'Plan para melones', 10, 20, 5);
+INSERT INTO irrigations_plan (irrigation_plan_id, name, humidity_min_allowed, light_max_allowed, temperature_max_allowed) VALUES (2, 'Plan para sandias', 20, 40, 5);
+INSERT INTO irrigations_plan (irrigation_plan_id, name, humidity_min_allowed, light_max_allowed, temperature_max_allowed) VALUES (3, 'Plan para soja', 40, 50, 5);
+
+INSERT INTO arduinos_irrigation_plan (arduino_irrigation_plan_id, arduino_id, irrigation_plan_id, user_id, arduinos_irrigation_plan_update_at) VALUES (1, 1, 1, 1, '2019-12-03 03:07:56');
+
+
