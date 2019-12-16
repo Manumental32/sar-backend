@@ -1,5 +1,7 @@
 -- we don't know how to generate root <with-no-name> (class Root) :(
-create table clients
+CREATE DATABASE IF NOT EXISTS dbtest; USE dbtest;
+
+create table IF NOT EXISTS clients
 (
 	client_id int auto_increment primary key,
 	name text not null,
@@ -9,13 +11,13 @@ create table clients
 	time_to_full_water int null
 );
 
-create table arduinos
+create table IF NOT EXISTS arduinos
 (
 	arduino_id int auto_increment primary key,
 	client_id int null
 );
 
-create table arduinos_measurement
+create table IF NOT EXISTS arduinos_measurement
 (
 	arduinos_measurement_id int auto_increment primary key,
 	arduino_id int default 1 not null,
@@ -26,7 +28,7 @@ create table arduinos_measurement
 	measurement_datetime datetime default CURRENT_TIMESTAMP null
 );
 
-create table irrigations_plan
+create table IF NOT EXISTS irrigations_plan
 (
 	irrigation_plan_id int auto_increment primary key,
 	name text null,
@@ -35,7 +37,7 @@ create table irrigations_plan
 	temperature_max_allowed int null
 );
 
-create table users
+create table IF NOT EXISTS users
 (
 	user_id int auto_increment primary key,
 	client_id int not null,
@@ -46,7 +48,7 @@ create table users
 	enabled tinyint(1) null
 );
 
-create table arduinos_irrigation_plan
+create table IF NOT EXISTS arduinos_irrigation_plan
 (
 	arduino_irrigation_plan_id int auto_increment primary key,
 	arduino_id int default 1 not null,
@@ -58,6 +60,7 @@ create table arduinos_irrigation_plan
 INSERT INTO users (user_id, client_id, name, lastname, mail, password, enabled) VALUES (1, 1, 'Manuel', 'Aquino', 'manuel.aquino.utn@gmail.com', 'manuel', 1);
 INSERT INTO users (user_id, client_id, name, lastname, mail, password, enabled) VALUES (2, 1, 'Pedro', 'Araujo', 'araujopedrop@gmail.com', 'pedro', 1);
 INSERT INTO users (user_id, client_id, name, lastname, mail, password, enabled) VALUES (3, 1, 'Nair', 'Olivera', 'nair.olivera.utn@gmail.com', 'nair', 1);
+INSERT INTO users (user_id, client_id, name, lastname, mail, password, enabled) VALUES (4, 1, 'Profe', 'a', 'profe@gmail.com', 'profe', 1);
 
 INSERT INTO irrigations_plan (irrigation_plan_id, name, humidity_min_allowed, light_max_allowed, temperature_max_allowed) VALUES (1, 'Plan para melones', 10, 20, 5);
 INSERT INTO irrigations_plan (irrigation_plan_id, name, humidity_min_allowed, light_max_allowed, temperature_max_allowed) VALUES (2, 'Plan para sandias', 20, 40, 5);

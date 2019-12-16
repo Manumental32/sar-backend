@@ -1,3 +1,13 @@
+### CORRER CON:
+
+docker-compose up
+
+
+### ENTRAR POR CONSOLA A MYSLQ CON: (password: rootpassword)
+
+docker-compose exec mysql mysql -u root -p
+
+
 Containerize This: PHP/Apache/MySQL
 ===================================
 
