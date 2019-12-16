@@ -2,6 +2,8 @@
 
 docker-compose up
 
+Nota: Ya tiene una base de datos que se importa sola. Siguiente paso hacer que pueda logearme al mysqladmin
+
 
 ### ENTRAR POR CONSOLA A MYSLQ CON: (password: rootpassword)
 
