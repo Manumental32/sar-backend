@@ -6,7 +6,7 @@ create table IF NOT EXISTS clients
 	client_id int auto_increment primary key,
 	name text not null,
 	imei text null,
-	phone int null,
+	phone bigint null,
 	address text null,
 	time_to_full_water int null
 );
@@ -57,6 +57,10 @@ create table IF NOT EXISTS arduinos_irrigation_plan
 	user_id int default 1 not null,
 	arduinos_irrigation_plan_update_at datetime default CURRENT_TIMESTAMP not null
 );
+
+INSERT INTO `clients` (`name`, `imei`, `phone`, `address`, `time_to_full_water`) VALUES ('SAR', 'sar@sar.com', 4589185, 'Neuquén 1191', 20)
+
+INSERT INTO `arduinos` (`client_id`) VALUES (1);
 
 INSERT INTO users (user_id, client_id, name, lastname, mail, password, enabled) VALUES (1, 1, 'Manuel', 'Aquino', 'manuel.aquino.utn@gmail.com', 'manuel', 1);
 INSERT INTO users (user_id, client_id, name, lastname, mail, password, enabled) VALUES (2, 1, 'Pedro', 'Araujo', 'araujopedrop@gmail.com', 'pedro', 1);

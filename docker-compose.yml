@@ -29,22 +29,14 @@ services:
       - ${PROJECT_ROOT}/:/var/www/html/
     container_name: apache
   mysql:
-    image: mysql:${MYSQL_VERSION:-latest}
-      - "80:80"
-    volumes:
-      - ${PROJECT_ROOT}/:/var/www/html/
-    links:
-        - mysql
-    container_name: apache
-  mysql:
     image: mysql:5.7
     command: --default-authentication-plugin=mysql_native_password
     restart: always
     ports:
       - "3306:3306"
     volumes:
-            - data:/var/lib/mysql
-            - ./dump:/docker-entrypoint-initdb.d
+      - data:/var/lib/mysql
+      - ./dump:/docker-entrypoint-initdb.d
     networks:
       - backend
     environment:
@@ -60,9 +52,13 @@ services:
     ports:
         - 8000:80
     environment:
-        MYSQL_USER: otherUser
-        MYSQL_PASSWORD: password
-        MYSQL_ROOT_PASSWORD: rootpassword 
+        MYSQL_USER: root
+        MYSQL_ROOT_PASSWORD: rootpassword
+        PMA_HOST: mysql
+    depends_on:
+      - mysql
+    networks:
+      - backend
 networks:
   frontend:
   backend:
