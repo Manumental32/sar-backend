@@ -6,7 +6,7 @@ date_default_timezone_set('America/Argentina/Buenos_Aires');
 $host = 'mysql';
 $user = 'root';
 $pass = 'rootpassword';
-$dbname = "sardb";
+$dbname = "dbtest";
 
 $conexion = new mysqli($host, $user, $pass, $dbname);
 
