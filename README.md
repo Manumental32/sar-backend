@@ -14,6 +14,17 @@ TODO:
 Agregar un dump a la db, ver este ejemplo:
 https://gist.github.com/jcavat/2ed51c6371b9b488d6a940ba1049189b
 
+=======
+### CORRER CON:
+
+docker-compose up
+
+Nota: Ya tiene una base de datos que se importa sola. Siguiente paso hacer que pueda logearme al mysqladmin
+
+
+### ENTRAR POR CONSOLA A MYSLQ CON: (password: rootpassword)
+
+docker-compose exec mysql mysql -u root -p
 
 
 Containerize This: PHP/Apache/MySQL

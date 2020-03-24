@@ -7,7 +7,7 @@ include('connectDb.php');
 <br>
 <a href="http://localhost:9999/getAllowedSensorsValue.php?arduino_id=1">http://localhost:9999/getAllowedSensorsValue.php?arduino_id=1</a>
 <br>
-<a href="http://localhost:9999/getIrrigationsPlans.php">http://localhost:9999/getIrrigationsPlans.php</a>
+<a href="http://localhost:9999/getIrrigationsPlans.php?enabled=1">http://localhost:9999/getIrrigationsPlans.php?enabled=1</a>
 <br>
 <a href="http://localhost:9999/getUsers.php">http://localhost:9999/getUsers.php</a>
 <br>

@@ -18,6 +18,7 @@ $query = "INSERT INTO arduinos_measurement
 if (!$result = $conexion->query($query)) {
     echo "Error:\n";
     echo $query;
+    exit;
 }
 	
 $conexion ->close();
