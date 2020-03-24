@@ -17,4 +17,5 @@ if (!$result = $conexion->query($query)) {
 }
 
 $conexion ->close();
+echo ("OK");
 ?>

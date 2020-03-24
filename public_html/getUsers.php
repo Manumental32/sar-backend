@@ -5,10 +5,13 @@ include('connectDb.php');
 $arduino_id = isset($_GET["arduino_id"]) ? $_GET["arduino_id"] : 1;
 $mail = isset($_GET["mail"]) ? $_GET["mail"] : '';
 $password = isset($_GET["password"]) ? $_GET["password"] : '';
-$enabled = isset($_GET["enabled"]) ? $_GET["enabled"] : 1;
+$enabled = isset($_GET["enabled"]) ? $_GET["enabled"] : '';
 // $now = date("Y-m-d H:i:s");
 
-$sql = "SELECT name, lastname, mail, password, enabled FROM users WHERE enabled = $enabled";
+$sql = "SELECT name, lastname, mail, password, enabled FROM users WHERE 1 = 1"; 
+if ($enabled != '') {
+	$sql = $sql . " AND enabled = $enabled ";
+}
 if ($mail != '' && $password != '') {
 	$sql = $sql . " AND mail = '$mail' AND password = '$password'";
 }
