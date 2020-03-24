@@ -1,25 +1,23 @@
-Correr la app con en la carpeta raiz del proyecto:
+TODO:
+Probar si levanta en AWS sin tocar nada
 
+=======
+### CORRER CON (en la carpeta raiz del proyecto):
+```
 docker-compose up
+```
 
-Front:
+Public PHP Front:
 
 http://localhost:9999/
 
+Nota: Ya tiene una base de datos que se importa sola.
 DB:
+
+http://localhost:8000/
+root
+rootpassword
 Ver credenciales en el archivo .env
-
-
-TODO:
-Agregar un dump a la db, ver este ejemplo:
-https://gist.github.com/jcavat/2ed51c6371b9b488d6a940ba1049189b
-
-=======
-### CORRER CON:
-
-docker-compose up
-
-Nota: Ya tiene una base de datos que se importa sola. Siguiente paso hacer que pueda logearme al mysqladmin
 
 
 ### ENTRAR POR CONSOLA A MYSLQ CON: (password: rootpassword)
