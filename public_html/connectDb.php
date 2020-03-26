@@ -3,9 +3,9 @@
 // header("Content-Type: application/json; charset=UTF-8");
 date_default_timezone_set('America/Argentina/Buenos_Aires');
 
-$host = 'mysql';
+$host = 'localhost';
 $user = 'root';
-$pass = 'rootpassword';
+$pass = '';
 $dbname = "dbtest";
 
 $conexion = new mysqli($host, $user, $pass, $dbname);
