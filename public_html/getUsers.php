@@ -6,14 +6,18 @@ $arduino_id = isset($_GET["arduino_id"]) ? $_GET["arduino_id"] : 1;
 $mail = isset($_GET["mail"]) ? $_GET["mail"] : '';
 $password = isset($_GET["password"]) ? $_GET["password"] : '';
 $enabled = isset($_GET["enabled"]) ? $_GET["enabled"] : '';
+$user_id = isset($_GET["user_id"]) ? $_GET["user_id"] : '';
 // $now = date("Y-m-d H:i:s");
 
-$sql = "SELECT name, lastname, mail, password, enabled FROM users WHERE 1 = 1"; 
+$sql = "SELECT user_id, name, lastname, mail, password, enabled FROM users WHERE 1 = 1"; 
 if ($enabled != '') {
 	$sql = $sql . " AND enabled = $enabled ";
 }
 if ($mail != '' && $password != '') {
 	$sql = $sql . " AND mail = '$mail' AND password = '$password'";
+}
+if ($user_id != '') {
+	$sql = $sql . " AND user_id = $user_id ";
 }
 
 $result = $conexion->query($sql) or die('error');
