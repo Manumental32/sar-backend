@@ -4,6 +4,7 @@ include('connectDb.php');
 
 $irrigation_plan_id = isset($_GET["irrigation_plan_id"]) ? $_GET["irrigation_plan_id"] : '';
 if ($irrigation_plan_id == '') {
+	header('HTTP/1.0 400 Error');
 	die('falta irrigation_plan_id');
 }
 
@@ -14,11 +15,16 @@ $temperature_max_allowed = isset($_GET["temperature_max_allowed"]) ? $_GET["temp
 $enabled = isset($_GET["enabled"]) ? $_GET["enabled"] : 1;
 
 $query = "UPDATE irrigations_plan t SET ";
-$query = $query . "t.`name` = {$name} , t.`humidity_min_allowed` = {$humidity_min_allowed}, t.`light_max_allowed` = {$light_max_allowed}, t.`temperature_max_allowed` = {$temperature_max_allowed}, t.`enabled` = {$enabled} ";
+if($enabled == 1) {
+	$query = $query . "t.`name` = {$name} , t.`humidity_min_allowed` = {$humidity_min_allowed}, t.`light_max_allowed` = {$light_max_allowed}, t.`temperature_max_allowed` = {$temperature_max_allowed}";
+} else {
+	$query = $query . " t.`enabled` = {$enabled} ";
+}
 $query = $query . " WHERE t.`irrigation_plan_id` = {$irrigation_plan_id}";
 // echo $query;
 
 if (!$result = $conexion->query($query)) {
+	header('HTTP/1.0 400 Error');
     echo "Error:\n";
     echo $query;
     die();
