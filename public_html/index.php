@@ -1,8 +1,8 @@
-<h1>SAR is alive!</h1>
 <?php
 include('connectDb.php');
 $domain = "";
 ?>
+<h1>SAR is alive!</h1>
 <a href="<?=$domain?>/grabaDatos.php?arduino_id=1&client_id=1&humidity=10&light=20&temperature=30" target="_blank"><?=$domain?>/grabaDatos.php?arduino_id=1&client_id=1&humidity=10&light=20&temperature=30</a>
 <br>
 <a href="<?=$domain?>/getAllowedSensorsValue.php?arduino_id=1" target="_blank"><?=$domain?>/getAllowedSensorsValue.php?arduino_id=1</a>

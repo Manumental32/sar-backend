@@ -1,5 +1,5 @@
 TODO:
-Probar si levanta en AWS sin tocar nada
+Probando si levanta en AWS sin tocar nada2
 
 =======
 ### CORRER CON (en la carpeta raiz del proyecto):
